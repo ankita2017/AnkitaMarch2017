@@ -1,6 +1,8 @@
 package design;
 
-public class EmployeeInfo{
+import java.util.Scanner;
+
+public class EmployeeInfo implements Employee{
 	
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
@@ -17,6 +19,10 @@ public class EmployeeInfo{
 	 * declare few static and final fields and some non-static fields
 	 */
 	static String companyName;
+	int employeeId, salary, bonus;
+	static int pension;
+	String employeeName;
+	 //static String performance;
 	
 	/*
 	 * You must implement the logic for below 2 methods and 
@@ -28,12 +34,16 @@ public class EmployeeInfo{
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
-	public EmployeeInfo(int employeeId){
+	public EmployeeInfo(){
 		
 	}
     public EmployeeInfo(String name, int employeeId){
 		
-	}
+    	employeeName = name;
+    	this.employeeId = employeeId;
+    	System.out.println("The name of employee is " + employeeName + " EmployeeId is " + employeeId);
+    	
+    	}
 	
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
@@ -43,10 +53,28 @@ public class EmployeeInfo{
 	 * So you probably need to send 2 arguments.
 	 * 
 	 */
-	public static int calculateEmployeeBonus(){
-		int total=0;
-		return total;
+	public int calculateEmployeeBonus(String performance, int salary){
+		//int total=0;
+		//return total;
+		if(performance== "Best")
+    	{
+    		bonus = salary*10/100;
+    		
+    	}
+    	
+    	if(performance=="Average")
+    	{
+    		bonus = salary*8/100;
+   
+    	}
+    	if(performance=="Poor"){
+    		bonus = salary*5/100;
+    		//salary=(salary*12)+bonus;
+    	}
+	
+    	return bonus;
 	}
+	
 	
 	/*
 	 * This methods should calculate Employee Pension based on salary and numbers of years with the company.
@@ -55,8 +83,46 @@ public class EmployeeInfo{
 	 * So you probably need to send 2 arguments.
 	 * 
 	 */
-	public static int calculateEmployeePension(){
-		int total=0;
-		return total;
+	public static int calculateEmployeePension(int numberofyears, int salary){
+		
+		if(numberofyears==1)
+		pension = 5*salary/100;
+		
+		if(numberofyears==2)
+		pension = 10*salary/100;
+		
+		if(numberofyears==3)
+			pension = 15*salary/100;
+			
+		return pension;
+	}
+	@Override
+	public int employeeId() {
+		return employeeId;
+	}
+	@Override
+	public String employeeName() {
+		return employeeName;
+	}
+	@Override
+	public void assignDepartment() {
+		
+	}
+	@Override
+	public int calculateSalary() {
+		System.out.println("Enter the no of working hours in a month");
+		Scanner sc = new Scanner(System.in);
+		int  workinghours = sc.nextInt();
+		System.out.println("enter no. of working days in a month");
+		int days = sc.nextInt();
+		int  salary = workinghours*days;
+		return salary;
+	}
+	@Override
+	public void benefitLayout() {
+		
+		salary = (salary*12)+bonus;
+		System.out.println("Annual salary with bonus is " + salary);
+		
 	}
 }

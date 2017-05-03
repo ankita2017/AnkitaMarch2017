@@ -11,9 +11,35 @@ public class Pattern {
 		 */
 		
 
+		int i = 100;
+		
+		while(i>=0) {
+			System.out.print(i + ",");
+			
+		if(i>90)
+		{
+			i=i-1;
+		}
+			
+		else if(i>70){
+			i=i-2;
+			
+		}
+	
+		else if(i>40){
+			i=i-3;
+		}
+		
+		else {
+			i = i-4;
+		}
 		
 		
 		
-
 	}
+	
+	}
+	
+	
 }
+

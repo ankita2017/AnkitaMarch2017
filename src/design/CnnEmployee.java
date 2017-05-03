@@ -15,7 +15,13 @@ public class CnnEmployee {
 	 **/
 	public static void main(String[] args) {
 		
-
+		EmployeeInfo eminf = new EmployeeInfo("Sam", 12345);
+		
+		System.out.println("The salary is " + eminf.calculateSalary());
+		eminf.calculateEmployeeBonus("Best", 50000);
+		eminf.benefitLayout();
+		System.out.println("Pension is  " + EmployeeInfo.calculateEmployeePension(5, 4000));
+		
 
 	}
 

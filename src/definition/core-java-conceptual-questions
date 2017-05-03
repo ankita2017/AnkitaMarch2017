@@ -1,33 +1,183 @@
 Please answer the below core-java Questions:
 
+Q.1. What jdk contains or composed of and define each components?
+Ans: The Java Development Kit (JDK) is a software development environment used for developing Java applications and applets.
+It includes the Java Runtime Environment (JRE), an interpreter/loader (java), a compiler (javac), an archiver (jar),
+a documentation generator (javadoc) and other tools needed in Java development.
 
-What jdk contains or composed of and define each components?
-What is IDE?
-What are the IDEs available in the market to support java?
-Explain the entire java life cycle.
-what is class?
-What is object?
-What is the entry point of an application?
-Why main is static?
-What is the difference between an Interface and Abstract class?
-Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
-what is Access Specifier?
-What is OOP ? Define each feature of java OOP.
-What is API? Name list of API that you have used so far.
-Does java support multiple inheritance?
-What is method overloading and when it happens?
-What is method overriding and when it happens?
-Explain exceptions in java and how to handle it.
-What is static keyword in java? How it has been used in variables and methods ?
-What is final and how it has been used variables and methods?
-What is final, finally and finalize?
-What is a constructor ?
-What is "this" keyword in java ?
-What is "super" keyword in java?
-What is JVM stand for ?
-What version of java are you using?
-What is JAR stand for ?
-What is compile time and run time?
-What is heap?
-How java manage it's memory?
-What is the difference between String, StringBuffer and StringBuilder?
+Q.2. What is IDE?
+Ans : IDE is Integrated Development Environment. It is a software suite that contains tools for developers to write and test software.
+An IDE contains a code editor, a compiler or interpreter and a debugger that the developer accesses through a single graphical user interface (GUI).
+
+Q.3. What are the IDEs available in the market to support java?
+Ans : NetBeans, IntelliJ IDEA, Eclipse, JDeveloper, Android Studio, DrJava, MyEclipse, JEdit, BlueJ
+
+Q.4. Explain the entire java life cycle.
+Ans : Java life cycle:
+   When we write a source code using either notepad or eclipse IDE, it needs to be converted into byte code using javac compiler.
+   Byte code is in the form of .class .  The class file then loads into the JVM using java loader .The JVM then send all the
+   information to the operating system which shows you the output
+   The compiler:
+   When we compile a java file it is written with the extension .java. for example A.java
+   The job of the compiler is to convert the ‘A.java’ into byte code (machine language) which will appear as ‘A.class’
+   The next step is to load the A.class into JVM (Java virtual machine)
+    
+   JVM component:
+   JVM has the following components:
+   Class loader (java): the class loader is also called java which loads the class file into the JVM Bytecode verifier:
+   The byte code verifier verifies the byte codes that is loaded.
+   Execution engine (JIT code generator): In the next step the JIT(just in time ) code generator converts the byte code
+   into binary machine language which is understood by the operating system.
+    
+Q.5. what is class?
+Ans : Class can be defined as a template/blueprint that describes the behavior/state that the object of its type support.
+ It is basically a data structure inside which we can define variables and methods. We can create objects also.
+
+Q.6. What is object?
+Ans : An object is an instance of a class. Object has state and behaviours. Example pen, table, chair, etc.
+
+Q.7. What is the entry point of an application?
+Ans : Main Function
+
+Q.8. Why main is static?
+Ans : Main Function is called by JVM before objects are made. It is static so that it can be directly invoked by the class.
+
+Q.9. What is the difference between an Interface and Abstract class?
+Ans :
+Abstract Class
+i. Abstract Class can have Abstract and Non-Abstract methods.
+ii. It does not support multiple inheritance.
+iii. It can have final,non-final, static and non-static variables.
+iv. It can implement non abstract methods and declare abstract methods only.
+v. We need to use "Abstract" Keyword.
+v. Example : public abstract class Shape{
+             public abstract void draw();
+             }
+Interface
+i. Interface can only contain Abstract Methods.
+ii. It supports multiple inheritance.
+iii. It has only static and final variables.
+iv. We can only declare methods. Implement in the sub-classes.
+v. We need to use "Interface" keyword.
+vi. Example : public interface Triangle{
+                void draw();
+                 }
+
+Q.10. Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
+Ans : No object instantiated. Through Inheritance.
+
+Q.11. what is Access Specifier?
+Ans : The access to classes, constructors, methods and fields are regulated using access modifiers i.e. a class can control what information
+or data can be accessible by other classes. Access Specifiers can be used to restrict the access.
+There are four types of Access Specifier:
+Modifier        Class       Package      Sub-Class      Outside(World)
+Public           Yes          Yes           Yes             Yes
+Protected        Yes          Yes           Yes             No
+Default          Yes          Yes           No              No
+Private          Yes          No            No              No
+
+Q.12. What is OOP ? Define each feature of java OOP.
+Ans : OOP stands for Object Orientation Programming. In OOP's, we design a program using classes and objects.
+OOP's has four features:
+i.  Abstraction : Hiding internal details and showing functionality. We use abstract class and interface to achieve this functionality.
+ii. Polymorphism : When one task is performed in many ways. It can be static and dynamic.
+We use Method Overloading and Method Overiding to achieve polymorphism
+Method Overloading takes place during complie time. It is Static Polymorphism.
+Method Overiding takes place during run time. It is Dynamic Polymorphism.
+iii. Inheritance : When an object acquires the properties and behaviour of the parent object. It provides code reusability and helps achieve
+runtime polymorphism.
+iv. Encapsulation : It is the process of binding or wrapping the data together into a single unit.
+
+Q.13. What is API? Name list of API that you have used so far.
+Ans : Java Application Programming Interface is a list of all classes that are part of JDK(Java Development Kit). It includes all
+Java packages, classes and interfaces along with their methods, fields and constructors. These prewritten classes provide a tremendous amount of
+functionality. Examples : java.io, java.lang,  java.math, java.net, java.util, java.util.jar
+
+Q.14. Does java support multiple inheritance?
+Ans : No, it causes ambiguity.
+
+Q.15. What is method overloading and when it happens?
+Ans : Method Overloading is a feature that allows a class to have two or more methods having same name but different number and type of argument.
+ It is Static because which method to be invoked will be decided at the time of compliation.
+
+Q.16. What is method overriding and when it happens?
+Ans : Method Overiding means that a Derived/Child class is implemented a method of its Super/Base Class.
+It is Dynamic and takes place during run time.
+
+Q.17. Explain exceptions in java and how to handle it.
+An exception is an event which occurs during the execution of the program. It disrupts the normal flow of the program instructions.
+It is handled using try catch block.
+Example :       try {
+                    //protected code
+                    } catch (Exception e)
+                {
+                   \\catch block
+                }
+
+Q.18. What is static keyword in java? How it has been used in variables and methods ?
+Ans : The static keyword denotes that a member variable, or method, can be accessed without requiring an instantiation of the class to which it belongs.
+We can call a method, directly with the CLassName, no object is required.
+Static Variable :- is also called Class Variable. All instances share the same copy of the variable.
+Static Method :- belongs to the class rather than the object of a class.
+
+Q.19. What is final and how it has been used variables and methods?
+Ans : Final keyword can be used with Variable, Class and Method.
+When Final keyword is used with Class, it cannot be subclassed or inherited.
+When Final Keyword is used with Variable, it cannot change its value. Can be initialized only once.
+When Final Keyword is used with Method, it cannot be Overriden by subclasses.
+
+Q.20. What is final, finally and finalize?
+Ans : Final is a keyword. It is used to apply restrictions on class, method and variable.
+      Finally is a block. It is used to place the important code, it will be executed whether exception is handled or not.
+      Finalize is a method. It used to perform clean up processing just before object is garbage collected.
+
+Q.21. What is a constructor ?
+Ans : The name of the constructor should be same as the Class Name. It does not have a return type.It is invoked at the the time of object creation.
+
+Q.22. What is "this" keyword in java ?
+Ans : "this" is a reference variable that refers to the current object. It can be used inside a method or constructor.
+It can be used to refer to current class variable, or to invoke current class method/constructor.
+
+Q.23. What is "super" keyword in java?
+Ans : Super is used inside sub-class method definition to call a method in Super class. Only public and protected methods can be called by super keyword.
+
+Q.24. What is JVM stand for ?
+Ans : JVM stands for Java Virtual Machine.
+
+Q.25. What version of java are you using?
+Ans : 8.0.1210.13
+
+Q.26. What is JAR stand for ?
+Ans : Java Archive.
+
+Q.27. What is compile time and run time?
+Ans : The source code must be compiled into machine code inorder to become executable program. This compilation process is referred to as Compile time.
+A complied program can be accessed by a user. When an application is running, it is called Run-time.
+
+Q.28. What is heap?
+Ans : The heap is a runtime data area from which memory for all class instances and arrays is allocated. It is created on virtual machine start-up.
+
+Q.29. How java manage it's memory?
+Ans : Memory management is the process of allocating new objects and removing unused objects to make space for those new object allocations.
+It includes :
+The Heap, Object Allocation and Garbage Collection
+
+Q.30. What is the difference between String, StringBuffer and StringBuilder?
+Ans : String-
+* It is immutable object(once created cannot be changed).
+* Storage Area : Constant String Pool
+* Thread Safe : Yes
+* Performance : fast
+
+StringBuffer-
+* It is mutable (can change the value of the object).
+* Storage Area : Heap
+* Thread Safe : Yes
+* Performance : very slow
+
+StringBuilder-
+* It is mutable.
+* Storage Area : Heap
+* Thread Safe : No
+* Performance : fast
+

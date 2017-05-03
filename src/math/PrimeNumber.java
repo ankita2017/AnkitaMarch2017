@@ -13,6 +13,31 @@ public class PrimeNumber {
 		 *
 		 */
 
+		double c;
+		
+		System.out.println("Prime Numbers are :");
+		
+		for(double i=2; i<= 1000000; i++)
+			{
+			c=0;
+			for(double j=1; j<=i; j++ ){
+				
+				if(i%j ==0)
+				{
+					c++;
+				}		
+				
+			}
+			
+			if(c==2){
+			System.out.print(" " + i);
+				
+				
+			}
+			
+		}
+	
+		
 	}
 
 }

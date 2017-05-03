@@ -128,6 +128,7 @@ public class ConnectDB {
             e.printStackTrace();
         }
     }
+    
 
     public List<String> directDatabaseQueryExecute(String passQuery,String dataColumn)throws Exception{
         List<String> data = new ArrayList<String>();
@@ -217,7 +218,7 @@ public class ConnectDB {
         }
     }
 
-    public static List<User> readFromMySql()throws IOException, SQLException, ClassNotFoundException{
+    public static List<User> readUserFromMySql(String table)throws IOException, SQLException, ClassNotFoundException{
         List<User> list = new ArrayList<>();
         User user = null;
         try{
@@ -235,6 +236,32 @@ public class ConnectDB {
             //System.out.format("%s, %s\n", name, id);
             user = new User(name,id);
             list.add(user);
+
+        }
+        st.close();
+       }catch (Exception e){
+           System.err.println("Got an exception! ");
+           System.err.println(e.getMessage());
+         }
+       return list;
+    }
+    
+    public static List<String> readFromMySql(String table, List<String> column, Map<String, String> where)throws IOException, SQLException, ClassNotFoundException{
+        List<String> list = new ArrayList<>();
+        User user = null;
+        try{
+        Connection conn = connectToMySql();
+        String query = "SELECT * FROM ".concat(table);
+        // create the java statement
+        Statement st = conn.createStatement();
+        // execute the query, and get a java resultset
+        ResultSet rs = st.executeQuery(query);
+        // iterate through the java resultset
+        while (rs.next())
+        {
+            String name = rs.getString(1);
+            //System.out.format("%s, %s\n", name, id);
+            list.add(name);
 
         }
         st.close();
